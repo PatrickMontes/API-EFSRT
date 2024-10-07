@@ -34,4 +34,3 @@ public class PedidoItem {
     @Column(name = "creado_en")
     private final LocalDateTime creadoEn = LocalDateTime.now();
 
-}

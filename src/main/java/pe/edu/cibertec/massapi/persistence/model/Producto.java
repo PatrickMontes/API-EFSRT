@@ -28,4 +28,3 @@ public class Producto {
     private final LocalDateTime creadoEn = LocalDateTime.now();
 
 }
-
