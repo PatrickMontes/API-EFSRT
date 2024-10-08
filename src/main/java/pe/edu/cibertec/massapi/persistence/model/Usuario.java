@@ -1,7 +1,6 @@
 package pe.edu.cibertec.massapi.persistence.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import pe.edu.cibertec.massapi.persistence.enums.UsuarioRole;
@@ -21,25 +20,23 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Se requiere un nombre")
+    @NotBlank(message = "Se necesita nombre")
     private String nombre;
 
-    @Email
     @Column(unique = true)
-    @NotBlank(message = "Se requiere un email")
+    @NotBlank(message = "Se necesita email")
     private String email;
 
-    @NotBlank(message = "Se requiere una contraseña")
-    private String password;
+    @NotBlank(message = "Se necesita contraseña")
+    private String contrasena;
 
     @Column(name = "numero_telefono")
-    @NotBlank(message = "Se requiere un número de teléfono")
+    @NotBlank(message = "Se necesita número de teléfono")
     private String numeroTelefono;
+    private UsuarioRole rol;
 
-    private UsuarioRole role;
-
-    @OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<PedidoItem> pedidoItemList;
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ItemPedido> listaItemsPedido;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Direccion direccion;

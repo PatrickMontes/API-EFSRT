@@ -9,12 +9,13 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "pedido_item")
-public class PedidoItem {
+@Table(name = "item_pedido")
+public class ItemPedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private int cantidad;
     private BigDecimal precio;
     private PedidoEstado estado;
@@ -34,3 +35,4 @@ public class PedidoItem {
     @Column(name = "creado_en")
     private final LocalDateTime creadoEn = LocalDateTime.now();
 
+}

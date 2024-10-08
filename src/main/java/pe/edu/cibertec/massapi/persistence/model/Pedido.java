@@ -15,10 +15,10 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal total;
+    private BigDecimal precioTotal;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PedidoItem> orderItemList;
+    @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ItemPedido> listaItemsPedido;
 
     @Column(name = "creado_en")
     private final LocalDateTime creadoEn = LocalDateTime.now();
