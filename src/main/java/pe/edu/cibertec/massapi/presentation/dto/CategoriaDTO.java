@@ -14,8 +14,9 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoriaDTO {
+
     private Long id;
     private String nombre;
-    private List<ProductoDTO> productList;
+    private List<ProductoDTO> listaProductos;
 
 }

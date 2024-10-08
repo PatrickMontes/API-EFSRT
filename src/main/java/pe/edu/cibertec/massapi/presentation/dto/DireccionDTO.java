@@ -14,11 +14,12 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DireccionDTO {
+
     private Long id;
-    private String direccion;
+    private String calle;
     private String ciudad;
     private String estado;
-    private String zipcode;
+    private String codigoPostal;
     private String pais;
 
     private UsuarioDTO usuario;

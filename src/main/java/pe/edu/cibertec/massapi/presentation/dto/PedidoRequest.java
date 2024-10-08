@@ -10,8 +10,9 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class PedidoRequest {
-    private BigDecimal totalPrecio;
-    private List<PedidoItemRequest> items;
-    private Pago pagoInfo;
+
+    private BigDecimal precioTotal;
+    private List<ItemPedidoRequest> items;
+    private Pago informacionPago;
 
 }

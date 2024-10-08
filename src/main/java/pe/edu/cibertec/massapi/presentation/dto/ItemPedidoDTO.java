@@ -14,7 +14,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PedidoItemDTO {
+public class ItemPedidoDTO {
+
     private Long id;
     private int cantidad;
     private BigDecimal precio;
@@ -24,3 +25,4 @@ public class PedidoItemDTO {
     private LocalDateTime creadoEn;
 
 }
+

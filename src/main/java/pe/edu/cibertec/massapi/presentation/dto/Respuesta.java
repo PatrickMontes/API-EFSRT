@@ -15,31 +15,30 @@ public class Respuesta {
 
     private int estado;
     private String mensaje;
-    private final LocalDateTime timeStamp = LocalDateTime.now();
+    private final LocalDateTime marcaTiempo = LocalDateTime.now();
 
     private String token;
-    private String role;
-    private String tiempoExpirado;
+    private String rol;
+    private String tiempoExpiracion;
 
-    private int totalPage;
-    private Long totalElement;
+    private int totalPaginas;
+    private Long totalElementos;
 
     private DireccionDTO direccion;
 
     private UsuarioDTO usuario;
-    private List<UsuarioDTO> usuarioList;
+    private List<UsuarioDTO> listaUsuarios;
 
     private CategoriaDTO categoria;
-    private List<CategoriaDTO> categoriaList;
+    private List<CategoriaDTO> listaCategorias;
 
     private ProductoDTO producto;
-    private List<ProductoDTO> productoList;
+    private List<ProductoDTO> listaProductos;
 
-    private PedidoItemDTO pedidoItem;
-    private List<PedidoItemDTO> pedidoItemList;
+    private ItemPedidoDTO itemPedido;
+    private List<ItemPedidoDTO> listaItemsPedido;
 
     private PedidoDTO pedido;
-    private List<PedidoDTO> pedidoList;
-
+    private List<PedidoDTO> listaPedidos;
 
 }

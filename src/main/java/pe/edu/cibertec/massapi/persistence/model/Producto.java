@@ -17,7 +17,7 @@ public class Producto {
 
     private String nombre;
     private String descripcion;
-    private String imagenUrl;
+    private String urlImagen;
     private BigDecimal precio;
 
     @ManyToOne(fetch = FetchType.LAZY)

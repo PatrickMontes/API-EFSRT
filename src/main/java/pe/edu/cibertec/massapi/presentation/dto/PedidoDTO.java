@@ -16,9 +16,10 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PedidoDTO {
+
     private Long id;
-    private BigDecimal total;
+    private BigDecimal precioTotal;
     private LocalDateTime creadoEn;
-    private List<PedidoItemDTO> orderItemList;
+    private List<ItemPedidoDTO> listaItemsPedido;
 
 }
