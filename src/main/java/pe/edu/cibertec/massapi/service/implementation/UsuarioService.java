@@ -43,7 +43,7 @@ public class UsuarioService implements IUsuarioService {
         Usuario usuario = Usuario.builder()
                 .nombre(usuarioDTO.getNombre())
                 .email(usuarioDTO.getEmail())
-                .contrasena(usuarioDTO.getContrasena())
+                .contrasena(passwordEncoder.encode(usuarioDTO.getContrasena()))
                 .numeroTelefono(usuarioDTO.getNumeroTelefono())
                 .rol(usuarioRole)
                 .build();
