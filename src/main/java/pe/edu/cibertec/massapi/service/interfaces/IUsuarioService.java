@@ -7,7 +7,7 @@ import pe.edu.cibertec.massapi.presentation.dto.UsuarioDTO;
 
 public interface IUsuarioService {
 
-    Respuesta registrarUsuario(UsuarioDTO usuario);
+    Respuesta registrarUsuario(UsuarioDTO usuarioDTO);
     Respuesta loginUsuario(LoginRequest loginRequest);
     Respuesta getAllUsuarios();
     Usuario getLoginUsuario();
