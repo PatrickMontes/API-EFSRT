@@ -5,6 +5,6 @@ import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
 
 public interface IDireccionService {
 
-    Respuesta guardarAndActualizarDireccion(DireccionDTO direccion);
+    Respuesta guardarAndActualizarDireccion(DireccionDTO direccionDTO);
 
 }
