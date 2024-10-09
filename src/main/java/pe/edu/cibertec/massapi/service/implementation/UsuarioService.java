@@ -116,6 +116,10 @@ public class UsuarioService implements IUsuarioService {
         Usuario usuario = getLoginUsuario();
         UsuarioDTO usuarioDTO = this.mapperDTO.usuarioToDTOPlusDireccionAndPedidoHistorial(usuario);
 
-        return null;
+        return Respuesta.builder()
+                .estado(200)
+                .direccion(usuarioDTO.getDireccion())
+                .usuario(usuarioDTO)
+                .build();
     }
 }
