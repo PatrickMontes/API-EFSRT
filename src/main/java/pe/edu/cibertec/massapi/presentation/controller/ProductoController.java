@@ -37,14 +37,14 @@ public class ProductoController {
     }
 
 
-    @DeleteMapping("/eliminar/{productId}")
+    @DeleteMapping("/eliminar/{productoId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Respuesta> deleteProduct(@PathVariable Long productoId){
         return ResponseEntity.ok(this.productoService.eliminarProducto(productoId));
     }
 
 
-    @GetMapping("/getProductoPorId/{productId}")
+    @GetMapping("/getProductoPorId/{productoId}")
     public ResponseEntity<Respuesta> getProductoPorId(@PathVariable Long productoId){
         return ResponseEntity.ok(this.productoService.getProductoPorId(productoId));
     }
