@@ -5,8 +5,8 @@ import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
 
 public interface ICategoriaService {
 
-    Respuesta crearCategoria(CategoriaDTO categoria);
-    Respuesta actualizarCategoria(Long categoriaId, CategoriaDTO categoria);
+    Respuesta crearCategoria(CategoriaDTO categoriaDTO);
+    Respuesta actualizarCategoria(Long categoriaId, CategoriaDTO categoriaDTO);
     Respuesta getAllCategorias();
     Respuesta getCategoriaPorId(Long categoriaId);
     Respuesta eliminarCategoria(Long categoriaId);
