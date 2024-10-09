@@ -18,9 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoriaService implements ICategoriaService {
 
-    private final CategoriaRepository categoriaRepository;
     private final MapperDTO mapperDTO;
-
+    private final CategoriaRepository categoriaRepository;
 
     @Override
     public Respuesta crearCategoria(CategoriaDTO categoriaDTO) {
