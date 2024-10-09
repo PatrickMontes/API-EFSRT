@@ -12,12 +12,12 @@ import pe.edu.cibertec.massapi.service.implementation.DireccionService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/address")
+@RequestMapping("/direccion")
 public class DireccionController {
 
     private final DireccionService direccionService;
 
-    @PostMapping("/save")
+    @PostMapping("/guardar")
     public ResponseEntity<Respuesta> save(@RequestBody DireccionDTO direccionDTO) {
         return ResponseEntity.ok(this.direccionService.guardarAndActualizarDireccion(direccionDTO));
     }
