@@ -68,7 +68,7 @@ public class ItemPedidoService implements IPedidoItemService {
 
         return Respuesta.builder()
                 .estado(200)
-                .mensaje("Order sucedido correctamente")
+                .mensaje("Pedido registrado correctamente")
                 .build();
     }
 
