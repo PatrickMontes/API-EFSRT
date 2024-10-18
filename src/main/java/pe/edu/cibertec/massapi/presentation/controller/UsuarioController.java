@@ -24,7 +24,6 @@ public class UsuarioController {
 
 
     @GetMapping("/miInformacion")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Respuesta> getUsuarioInfoAndPedidoHistorial() {
         return ResponseEntity.ok(this.usuarioService.getUsuarioInfoAndPedidoHistorial());
     }
