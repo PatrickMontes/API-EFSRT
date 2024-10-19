@@ -114,6 +114,7 @@ public class UsuarioService implements IUsuarioService {
     @Override
     public Respuesta getUsuarioInfoAndPedidoHistorial() {
         Usuario usuario = getLoginUsuario();
+        log.info(usuario.getDireccion().getCiudad());
         UsuarioDTO usuarioDTO = this.mapperDTO.usuarioToDTOPlusDireccionAndPedidoHistorial(usuario);
 
         return Respuesta.builder()

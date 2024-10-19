@@ -69,6 +69,8 @@ public class  MapperDTO {
         UsuarioDTO usuarioDTO = usuarioToDTOBasico(usuario);
 
         if(usuario.getDireccion()!=null){
+
+            System.out.println("DIRECCION NO ES NULO");
             DireccionDTO direccionDTO = direccionToDTOBasico(usuario.getDireccion());
             usuarioDTO.setDireccion(direccionDTO);
         }
