@@ -114,13 +114,32 @@ public class UsuarioService implements IUsuarioService {
     @Override
     public Respuesta getUsuarioInfoAndPedidoHistorial() {
         Usuario usuario = getLoginUsuario();
-        log.info(usuario.getDireccion().getCiudad());
-        UsuarioDTO usuarioDTO = this.mapperDTO.usuarioToDTOPlusDireccionAndPedidoHistorial(usuario);
+
+
+        if (usuario == null) {
+            throw new RuntimeException("El usuario no se encontró o no está logueado.");
+        }
+
+
+        if (usuario.getDireccion() != null) {
+            log.info("Ciudad del usuario: " + usuario.getDireccion().getCiudad());
+        } else {
+            log.info("La dirección del usuario no se encontró.");
+        }
+
+        UsuarioDTO usuarioDTO;
+        try {
+            usuarioDTO = this.mapperDTO.usuarioToDTOPlusDireccionAndPedidoHistorial(usuario);
+        } catch (Exception e) {
+            log.error("Error al mapear el objeto Usuario a UsuarioDTO", e);
+            throw new RuntimeException("Error al procesar la información del usuario.");
+        }
+
 
         return Respuesta.builder()
                 .estado(200)
-                .direccion(usuarioDTO.getDireccion())
+                .direccion(usuarioDTO.getDireccion()) // Puede ser nulo aquí sin problemas
                 .usuario(usuarioDTO)
                 .build();
-    }
+}
 }
