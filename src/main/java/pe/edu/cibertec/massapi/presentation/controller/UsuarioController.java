@@ -6,6 +6,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pe.edu.cibertec.massapi.persistence.model.Usuario;
 import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
 import pe.edu.cibertec.massapi.service.implementation.UsuarioService;
 

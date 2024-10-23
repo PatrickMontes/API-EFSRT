@@ -138,8 +138,8 @@ public class UsuarioService implements IUsuarioService {
 
         return Respuesta.builder()
                 .estado(200)
-                .direccion(usuarioDTO.getDireccion()) // Puede ser nulo aquí sin problemas
+                .direccion(usuarioDTO.getDireccion())
                 .usuario(usuarioDTO)
                 .build();
-}
+    }
 }

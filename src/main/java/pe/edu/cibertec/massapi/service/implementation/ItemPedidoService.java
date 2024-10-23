@@ -97,7 +97,7 @@ public class ItemPedidoService implements IPedidoItemService {
         Page<ItemPedido> pedidoItemPage = this.pedidoItemRepository.findAll(spec, pageable);
 
         if (pedidoItemPage.isEmpty()){
-            throw new NotFoundException("No Order Found");
+            throw new NotFoundException("No se encontro pedido");
         }
 
         List<ItemPedidoDTO> itemPedidoDTOS = pedidoItemPage.getContent().stream()

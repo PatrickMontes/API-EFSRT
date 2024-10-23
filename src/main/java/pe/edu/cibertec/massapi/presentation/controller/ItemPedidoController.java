@@ -29,7 +29,6 @@ public class ItemPedidoController {
 
 
     @PutMapping("/actualizarEstadoItemPedido/{itemPedidoId}")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Respuesta> actualizarEstadoItemPedido(@PathVariable Long itemPedidoId, @RequestParam String estado) {
         return ResponseEntity.ok(this.itemPedidoService.actualizarEstadoItemPedido(itemPedidoId, estado));
     }
