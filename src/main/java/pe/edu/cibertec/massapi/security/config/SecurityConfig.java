@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/autenticacion/**", "/imagenes/**", "/categoria/**", "/producto/**").permitAll()
-                        .requestMatchers("/pedido/**").hasAuthority("ADMIN")
+                        .requestMatchers("/pedido/**").authenticated()
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

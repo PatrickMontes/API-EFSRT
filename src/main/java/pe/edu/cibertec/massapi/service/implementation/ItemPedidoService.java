@@ -111,4 +111,12 @@ public class ItemPedidoService implements IPedidoItemService {
                 .totalElementos(pedidoItemPage.getTotalElements())
                 .build();
     }
+
+
+    @Override
+    public List<ItemPedido> obtenerPedidosPorUsuario(Usuario usuario) {
+        return pedidoItemRepository.findByUsuario(usuario);
+    }
+
+
 }

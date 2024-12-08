@@ -3,6 +3,7 @@ package pe.edu.cibertec.massapi.service.specification;
 import org.springframework.data.jpa.domain.Specification;
 import pe.edu.cibertec.massapi.persistence.enums.PedidoEstado;
 import pe.edu.cibertec.massapi.persistence.model.ItemPedido;
+import pe.edu.cibertec.massapi.persistence.model.Pedido;
 
 import java.time.LocalDateTime;
 
@@ -35,4 +36,7 @@ public class ItemPedidoSpecification {
     public static Specification<ItemPedido> hasItemId(Long itemId) {
         return (((root, query, criteriaBuilder) -> itemId != null ? criteriaBuilder.equal(root.get("id"), itemId) : null));
     }
+
+
+
 }

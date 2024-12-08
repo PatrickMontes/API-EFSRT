@@ -5,6 +5,8 @@ import pe.edu.cibertec.massapi.presentation.dto.LoginRequest;
 import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
 import pe.edu.cibertec.massapi.presentation.dto.UsuarioDTO;
 
+import java.time.LocalDate;
+
 public interface IUsuarioService {
 
     Respuesta registrarUsuario(UsuarioDTO usuarioDTO);
@@ -12,5 +14,4 @@ public interface IUsuarioService {
     Respuesta getAllUsuarios();
     Usuario getLoginUsuario();
     Respuesta getUsuarioInfoAndPedidoHistorial();
-
 }

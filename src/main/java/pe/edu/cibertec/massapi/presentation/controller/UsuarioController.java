@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.edu.cibertec.massapi.persistence.model.Usuario;
 import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
+import pe.edu.cibertec.massapi.presentation.dto.UsuarioDTO;
 import pe.edu.cibertec.massapi.service.implementation.UsuarioService;
 
 @RestController
@@ -29,4 +31,11 @@ public class UsuarioController {
         return ResponseEntity.ok(this.usuarioService.getUsuarioInfoAndPedidoHistorial());
     }
 
+
+    @GetMapping("/{usuarioId}/detalle")
+    public ResponseEntity<UsuarioDTO> obtenerUsuarioConPedidos(@PathVariable Long usuarioId) {
+        UsuarioDTO usuarioDTO = usuarioService.obtenerUsuarioConPedidos(usuarioId);
+        return ResponseEntity.ok(usuarioDTO);
+    }
 }
+

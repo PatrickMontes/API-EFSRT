@@ -9,11 +9,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.massapi.persistence.enums.PedidoEstado;
+import pe.edu.cibertec.massapi.persistence.model.ItemPedido;
+import pe.edu.cibertec.massapi.persistence.model.Usuario;
 import pe.edu.cibertec.massapi.presentation.dto.PedidoRequest;
 import pe.edu.cibertec.massapi.presentation.dto.Respuesta;
 import pe.edu.cibertec.massapi.service.implementation.ItemPedidoService;
+import pe.edu.cibertec.massapi.service.implementation.UsuarioService;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,6 +25,7 @@ import java.time.LocalDateTime;
 public class ItemPedidoController {
 
     private final ItemPedidoService itemPedidoService;
+    private final UsuarioService usuarioService;
 
     @PostMapping("/realizar")
     public ResponseEntity<Respuesta> realizarPedido(@RequestBody PedidoRequest pedidoRequest) {
@@ -50,6 +55,15 @@ public class ItemPedidoController {
 
         return ResponseEntity.ok(itemPedidoService.filtrarItemsPedido(pedidoEstado, inicio, fin, itemId, pageable));
 
+    }
+
+
+    @GetMapping
+    public ResponseEntity<List<ItemPedido>> obtenerPedidos() {
+        Usuario usuario = usuarioService.getLoginUsuario();
+        List<ItemPedido> pedidos = itemPedidoService.obtenerPedidosPorUsuario(usuario);
+
+        return ResponseEntity.ok(pedidos);
     }
 
 }

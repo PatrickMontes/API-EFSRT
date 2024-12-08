@@ -142,4 +142,14 @@ public class UsuarioService implements IUsuarioService {
                 .usuario(usuarioDTO)
                 .build();
     }
+
+
+    public UsuarioDTO obtenerUsuarioConPedidos(Long usuarioId) {
+        // Busca al usuario por ID
+        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(
+                () -> new NotFoundException("Usuario no encontrado"));
+
+        // Usa el mapper para convertir la entidad en un DTO
+        return mapperDTO.usuarioToDTOPlusDireccionAndPedidoHistorial(usuario);
+    }
 }
